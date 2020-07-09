@@ -14,8 +14,8 @@ const $moreVisible = X.toReactive(false);
 
 const SETTINGS_LABEL_CLASS = X.createClass({
     display: 'inline-block',
-    width: '8em',
-    paddingRight: '1em',
+    width: '6em',
+    paddingRight: '.5em',
     textAlign: 'right',
     whiteSpace: 'nowrap',
 });
@@ -53,7 +53,7 @@ export const more = D.Mask({
                 fontSize: '1.5em',
             },
         },
-            'More',
+            '更多',
         ),
         X.createElement('form', {
             id: 'settings-form',
@@ -62,7 +62,7 @@ export const more = D.Mask({
                 marginBottom: '1em',
             },
         },
-            SettingsLabel('World Width:', 'width-input'),
+            SettingsLabel('列数：', 'width-input'),
             D.TextInput({
                 id: 'width-input',
                 type: 'number',
@@ -81,7 +81,8 @@ export const more = D.Mask({
                     },
                 },
             }),
-            SettingsLabel('World Height:', 'height-input'),
+            X.createElement('br'),
+            SettingsLabel('行数：', 'height-input'),
             D.TextInput({
                 id: 'height-input',
                 type: 'number',
@@ -100,7 +101,8 @@ export const more = D.Mask({
                     },
                 },
             }),
-            SettingsLabel('Loop Delay', 'delay-input'),
+            X.createElement('br'),
+            SettingsLabel('刷新间隔：', 'delay-input'),
             D.TextInput({
                 id: 'delay-input',
                 type: 'number',
@@ -120,7 +122,7 @@ export const more = D.Mask({
                     },
                 },
             },
-                'Reset',
+                '重置',
             ),
         ),
         D.Section(null,
@@ -131,7 +133,7 @@ export const more = D.Mask({
                     },
                 },
             },
-                'Back'
+                '返回',
             ),
         ),
         D.Section(null,

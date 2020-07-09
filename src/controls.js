@@ -3,8 +3,8 @@ import { renderCanvas } from "./canvas.js";
 import { toggleMore } from './more.js';
 import { startLoop, stopLoop } from './loop.js';
 
-const START_TEXT = 'Start';
-const STOP_TEXT = 'Stop';
+const START_TEXT = '开始';
+const STOP_TEXT = '停止';
 
 const $toggleText = X.toReactive(START_TEXT);
 
@@ -41,9 +41,9 @@ export const controls = X.createElement('div', {
             stopLoop();
         }
     }),
-    Control('Step', () => {
+    Control('迭代', () => {
         updateWorld();
         renderCanvas();
     }),
-    Control('More', toggleMore),
+    Control('更多', toggleMore),
 );
