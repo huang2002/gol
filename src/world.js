@@ -55,7 +55,7 @@ export const setWorldHeight = height => {
         world.push(array(worldWidth, DEAD));
     }
 
-    worldWidth = newHeight;
+    worldHeight= newHeight;
 
 };
 
