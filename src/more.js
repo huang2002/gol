@@ -138,10 +138,16 @@ export const more = D.Mask({
         ),
         D.Section(null,
             D.Link({
+                href: 'https://baike.baidu.com/item/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/2926434',
+            },
+                '百度百科',
+            ),
+            X.createElement('br'),
+            D.Link({
                 title: 'GitHub Repo',
                 href: 'https://github.com/huang2002/gol',
             },
-                '(github)',
+                'github',
             ),
         ),
     ),
