@@ -29,11 +29,13 @@ export const setWorldWidth = width => {
 
     if (worldWidth < newWidth) {
         world.forEach(row => {
-            for (; worldWidth < newWidth; worldWidth++) {
+            for (let i = worldWidth; i < newWidth; i++) {
                 row.push(DEAD);
             }
         });
     }
+
+    worldWidth = newWidth;
 
 };
 
@@ -52,6 +54,8 @@ export const setWorldHeight = height => {
     for (; worldHeight < newHeight; worldHeight++) {
         world.push(array(worldWidth, DEAD));
     }
+
+    worldWidth = newHeight;
 
 };
 
