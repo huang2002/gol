@@ -1,4 +1,5 @@
 import { worldWidth, worldHeight, world, ALIVE, DEAD } from './world.js';
+import { loopTimer } from './loop.js';
 
 const RESIZE_DELAY = 100;
 const CONTAINER_PADDING = 16;
@@ -115,3 +116,9 @@ export const toggleCell = (x, y) => {
     world[i][j] = world[i][j] === DEAD ? ALIVE : DEAD;
     renderCanvas();
 };
+
+$color.watch(() => {
+    if (!loopTimer) {
+        renderCanvas();
+    }
+});

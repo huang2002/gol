@@ -4,10 +4,12 @@ import {
     resetWorld,
 } from './world.js';
 import { MIN_LOOP_DELAY, $loopDelay, loopTimer } from './loop.js';
-import { resizeCanvas, renderCanvas } from './canvas.js';
+import { resizeCanvas, renderCanvas, $color } from './canvas.js';
+
+const INPUT_WIDTH = '4em';
 
 X.insertStyle(`.${D.TEXT_INPUT_CLASS}`, {
-    width: '4em',
+    width: INPUT_WIDTH,
 });
 
 const $moreVisible = X.toReactive(false);
@@ -109,6 +111,16 @@ export const more = D.Mask({
                 min: MIN_LOOP_DELAY,
                 step: '1',
                 bind: $loopDelay,
+            }),
+            X.createElement('br'),
+            SettingsLabel('颜色：', 'color-input'),
+            X.createElement('input', {
+                id: 'color-input',
+                type: 'color',
+                bind: $color,
+                style: {
+                    width: INPUT_WIDTH,
+                },
             }),
         ),
         D.Section(null,
